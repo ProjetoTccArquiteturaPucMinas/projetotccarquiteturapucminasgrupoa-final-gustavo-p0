@@ -1,6 +1,6 @@
 # Sistema de Cálculo de Descontos para Marketplace
 
-## Seu Nome: 
+## Seu Nome: Gustavo Pimentel Carvalho Costa
 
 ## Visão Geral do Projeto
 
