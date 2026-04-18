@@ -8,28 +8,34 @@ public class Produto {
     private String nome;
     private BigDecimal preco;
     private CategoriaProduto categoria;
+<span class="fc" id="L11">    private BigDecimal percentualDesconto = BigDecimal.ZERO;</span>
 
-<span class="fc" id="L12">    public Produto(Long id, String nome, BigDecimal preco, CategoriaProduto categoria) {</span>
-<span class="fc" id="L13">        this.id = id;</span>
-<span class="fc" id="L14">        this.nome = nome;</span>
-<span class="fc" id="L15">        this.preco = preco;</span>
-<span class="fc" id="L16">        this.categoria = categoria;</span>
-<span class="fc" id="L17">    }</span>
+<span class="fc" id="L13">    public Produto(Long id, String nome, BigDecimal preco, CategoriaProduto categoria) {</span>
+<span class="fc" id="L14">        this.id = id;</span>
+<span class="fc" id="L15">        this.nome = nome;</span>
+<span class="fc" id="L16">        this.preco = preco;</span>
+<span class="fc" id="L17">        this.categoria = categoria;</span>
+<span class="fc" id="L18">    }</span>
 
     public Long getId() {
-<span class="fc" id="L20">        return id;</span>
+<span class="fc" id="L21">        return id;</span>
     }
 
     public String getNome() {
-<span class="fc" id="L24">        return nome;</span>
+<span class="fc" id="L25">        return nome;</span>
     }
 
     public BigDecimal getPreco() {
-<span class="fc" id="L28">        return preco;</span>
+<span class="fc" id="L29">        return preco;</span>
     }
 
     public CategoriaProduto getCategoria() {
-<span class="fc" id="L32">        return categoria;</span>
+<span class="fc" id="L33">        return categoria;</span>
     }
+
+    public void setDesconto(BigDecimal percentualDesconto) {
+<span class="nc" id="L37">        BigDecimal desconto = preco.multiply(percentualDesconto);</span>
+<span class="nc" id="L38">        this.preco = preco.subtract(desconto);</span>
+<span class="nc" id="L39">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

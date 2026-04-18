@@ -8,6 +8,7 @@ public class Produto {
     private String nome;
     private BigDecimal preco;
     private CategoriaProduto categoria;
+    private BigDecimal percentualDesconto = BigDecimal.ZERO;
 
     public Produto(Long id, String nome, BigDecimal preco, CategoriaProduto categoria) {
         this.id = id;
@@ -30,5 +31,10 @@ public class Produto {
 
     public CategoriaProduto getCategoria() {
         return categoria;
+    }
+
+    public void setDesconto(BigDecimal percentualDesconto) {
+        BigDecimal desconto = preco.multiply(percentualDesconto);
+        this.preco = preco.subtract(desconto);
     }
 }
